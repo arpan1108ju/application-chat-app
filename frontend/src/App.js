@@ -42,7 +42,7 @@ function App() {
         <Route exact path='/login' element={<Login socket={socket} />} />
         <Route exact path='/modal' element={<GroupModal />} />
 
-        {/* <Route exact path='/chat' Component={Chat} /> */}
+        {/* <Routgit e exact path='/chat' Component={Chat} /> */}
       
       </Routes>
     </>

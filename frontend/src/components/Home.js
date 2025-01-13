@@ -192,7 +192,8 @@ const Home = (props) => {
     setisChatSeleceted(true);
     // const other_user_id = e.target.value;
     const chat = JSON.parse(e.target.value);
-    const chat_id = chat._id;
+    const chat_id_got = chat._id;
+    setChat_id(chat_id_got);
     // console.log("Id : ",other_user_id);
     
     // show the chat in lower side
@@ -201,7 +202,7 @@ const Home = (props) => {
 
         sideBarRef.current.setToBeShownGroups(group_chats => {
             if(group_chats.length > 0){
-                var present = group_chats.filter((chat)=> chat._id === chat_id);
+                var present = group_chats.filter((chat)=> chat._id === chat_id_got);
                 if(present.length !== 0 ) return group_chats;
                 return  [...group_chats,chat]; 
             }
@@ -228,7 +229,7 @@ const Home = (props) => {
             method : "POST",
             headers : headers,
             body : JSON.stringify({
-              chat_id : chat_id
+              chat_id : chat_id_got
             })
         }
 
